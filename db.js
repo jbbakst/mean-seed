@@ -1,5 +1,5 @@
-var databaseURL = 'todos';
-var collections = ["Todo"];
+var databaseURL = 'db';
+var collections = ["Collection"]; // replace "Collection" with collection names
 var mongojs = require('mongojs');
 var db = mongojs.connect(databaseURL, collections);
 

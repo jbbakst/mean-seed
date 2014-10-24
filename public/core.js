@@ -1,38 +1,5 @@
-var todoApp = angular.module('todoApp', []);
+var app = angular.module('app', []);
 
-todoApp.controller("TodoController", function($scope, $http) {
-    $scope.formData = {};
-
-    $http.get('/api/todos')
-        .success(function(data) {
-            $scope.todos = data;
-            console.log(data);
-        })
-        .error(function(data) {
-            console.log('Error: ' + data);
-        });
-
-    $scope.createTodo = function() {
-        $http.post('/api/todos', $scope.formData)
-            .success(function(data) {
-                $scope.formData = {};
-                $scope.todos = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-
-    $scope.deleteTodo = function(id) {
-        console.log("TRYING TO DELETE");
-        $http.delete('/api/todos/' + id)
-            .success(function(data) {                
-                $scope.todos = data;
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
+app.controller("mainController", function($scope /*, $http*/) {     // uncomment $http if needed, otherwise delete
+    // fill in with client-side logic
 });
